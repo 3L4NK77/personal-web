@@ -1,0 +1,45 @@
+body {
+  background-color: rgb(57, 169, 219);
+  font-family: Rubik, Arial;
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  text-align: center;
+  line-height: 30px;
+  /* Remove fixed height */
+  /* height: 80%; */
+  overflow: visible; /* allow form to expand naturally */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+form hr {
+  width: 15%;
+}
+
+h1 {
+  text-align: center;
+}
+
+#overlay {
+  width: 80%;
+  margin: 3% auto;
+  min-height: 95vh; /* let it grow if content is taller */
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 40px;
+  overflow: auto; /* enable scrolling if needed */
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+#logo {
+  height: 100px;
+  display: block;
+  margin: auto;
+}
+
+.toppings label, .cheesy label {
+  margin-right: 25px;
+}
