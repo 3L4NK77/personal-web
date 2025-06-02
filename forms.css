@@ -1,45 +1,111 @@
+/* General page setup */
 body {
   background-color: rgb(57, 169, 219);
-  font-family: Rubik, Arial;
+  font-family: 'Rubik', Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-form {
-  text-align: center;
-  line-height: 30px;
-  /* Remove fixed height */
-  /* height: 80%; */
-  overflow: visible; /* allow form to expand naturally */
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-form hr {
-  width: 15%;
-}
-
-h1 {
-  text-align: center;
-}
-
+/* Overlay box containing the form */
 #overlay {
-  width: 80%;
+  width: 90%;
+  max-width: 900px;
   margin: 3% auto;
-  min-height: 95vh; /* let it grow if content is taller */
-  background-color: rgba(255, 255, 255, 0.9);
+  min-height: 95vh;
+  background-color: rgba(255, 255, 255, 0.95);
   border-radius: 40px;
-  overflow: auto; /* enable scrolling if needed */
+  padding: 30px;
   box-sizing: border-box;
-  padding: 20px;
+  overflow: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Logo */
 #logo {
   height: 100px;
   display: block;
-  margin: auto;
+  margin: 0 auto 20px;
 }
 
-.toppings label, .cheesy label {
+/* Form layout */
+form {
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* Headings and separators */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+/* Form sections */
+form section {
+  margin-bottom: 15px;
+}
+
+/* Labels and input spacing */
+label, span {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="range"],
+select,
+textarea,
+input[list] {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px;
+  margin-top: 5px;
+  font-size: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* Range input styling */
+.cooked span {
+  display: inline-block;
+  margin: 0 10px;
+  font-weight: 400;
+}
+
+/* Checkboxes and radio buttons inline */
+.toppings input[type="checkbox"],
+.cheesy input[type="radio"] {
+  margin-right: 5px;
+}
+
+.toppings label,
+.cheesy label {
   margin-right: 25px;
+  display: inline-block;
+}
+
+/* Submit button styling */
+#submit {
+  background-color: #39a9db;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+#submit:hover {
+  background-color: #2d8cbf;
 }
