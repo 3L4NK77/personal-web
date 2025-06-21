@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>queryDescendent</title>
+    <style>
+        body{
+            height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            background-color: #feba73;
+            padding: 20px 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+    <input type="text" value="" placeholder="add to list"/>
+    <ul id="list"></ul>
+    <button type="button">Click Me</button>
+    </div>
+    
+    <script>
+        const input = document.querySelector('input');
+        const addButton = document.querySelector('button');
+        const list = document.querySelector('#list');
+        let listMsg = '';
+
+        input.addEventListener('input', () => {
+            listMsg = input.value;
+        });
+
+        addButton.addEventListener('click', () => {
+            if (listMsg !== '') {
+                const li = document.createElement('li');
+                li.innerText = listMsg;
+                list.append(li);
+                input.value = '';
+                listMsg = '';
+            }
+        });
+    </script>
+</body>
+</html>
