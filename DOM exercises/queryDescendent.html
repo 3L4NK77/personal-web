@@ -37,7 +37,7 @@
         });
 
         addButton.addEventListener('click', () => {
-            if (listMsg !== '') {
+            if (listMsg.trim() !== '') {
                 const li = document.createElement('li');
                 li.innerText = listMsg;
                 list.append(li);
