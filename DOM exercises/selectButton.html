@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            background-color: #feba73;
+            padding: 20px 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button type="button" id="button">ON</button>
+    </div>
+    
+    <script>
+        const buttonElem = document.getElementById("button");
+
+        buttonElem.addEventListener('click', () => {
+            const oldText = buttonElem.innerText;
+            return button.innerText = oldText === "ON" ? "OFF" : "ON";
+        });
+    </script>
+</body>
+</html>
