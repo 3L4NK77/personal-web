@@ -37,7 +37,7 @@
         const listItems = document.querySelectorAll('#list li');
 
         for (let i = 0; i < listItems.length; i++) {
-            listItems[i].addEventListener('click', () => {
+            listItems[i].addEventListener('mouseenter', () => {
                 const oldText = listItems[i].innerText;
                 return listItems[i].innerText = oldText === "ON" ? "OFF" : "ON";
             });
