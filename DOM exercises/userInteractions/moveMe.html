@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Keep Moving Until Stop</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    #wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90px;
+      width: 100px;
+      background-color: green;
+      position: absolute;
+      transition: left 0.3s ease;
+    }
+
+    #stop {
+      height: 90px;
+      width: 100px;
+      background-color: red;
+      position: absolute;
+      bottom: 400px;
+      left: 500px; /* This sets where the stop box is */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="wrapper">
+    <div id="element">Move Me</div>
+  </div>
+
+  <div id="stop">stop here</div>
+
+  <script>
+    const movingDiv = document.getElementById('wrapper');
+    const stopDiv = document.getElementById('stop');
+    let distance = 0;
+
+    movingDiv.addEventListener('mouseenter', () => {
+      // Get positions
+      const movingRect = movingDiv.getBoundingClientRect();
+      const stopRect = stopDiv.getBoundingClientRect();
+
+      const isTouching = !(movingRect.right < stopRect.left);
+
+      // Move only if not touching
+      if (!isTouching) {
+        distance += 50;
+        movingDiv.style.left = distance + 'px';
+      }
+    });
+  </script>
+
+</body>
+</html>

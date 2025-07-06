@@ -38,8 +38,7 @@
 
         for (let i = 0; i < listItems.length; i++) {
             listItems[i].addEventListener('mouseenter', () => {
-                const oldText = listItems[i].innerText;
-                return listItems[i].innerText = oldText === "ON" ? "OFF" : "ON";
+                return listItems[i].innerText = "ON";
             });
         }
     </script>

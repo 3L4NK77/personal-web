@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toDo List</title>
+</head>
+<body>
+    <input value="" type="text" id="input" placeholder="To do..."/>
+    <button type="button" id="button">Add</button>
+    <ul id="list">
+        <li>Read a book</li>
+        <li>Lunch with Caro</li>
+        <li>Feed the dog</li>
+    </ul>
+
+    <script>
+        const input = document.getElementById('input');
+        const button = document.getElementById('button');
+        const list = document.getElementById('list');
+
+        button.addEventListener('click', () => {
+            const newItem = document.createElement('li');
+            newItem.innerText = input.value;
+            list.append(newItem);
+            input.value = "";
+        });
+    </script>
+</body>
+</html>
