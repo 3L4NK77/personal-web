@@ -11,6 +11,7 @@
       justify-content: space-between;
       align-items: center;
       position: relative;
+      overflow-x: hidden;
     }
 
     #wrapper {
@@ -21,49 +22,34 @@
       width: 100px;
       background-color: green;
       position: absolute;
-      transition: left 0.3s ease;
-    }
-
-    #stop {
-      height: 90px;
-      width: 100px;
-      background-color: red;
-      position: absolute;
-      bottom: 400px;
-      left: 500px; /* This sets where the stop box is */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
     }
   </style>
 </head>
 <body>
 
   <div id="wrapper">
-    <div id="element">Move Me</div>
+    <div>Move Me</div>
   </div>
 
-  <div id="stop">stop here</div>
-
   <script>
-    const movingDiv = document.getElementById('wrapper');
-    const stopDiv = document.getElementById('stop');
-    let distance = 0;
+    const rect = document.getElementById('wrapper');
+    let position = 0;
 
-    movingDiv.addEventListener('mouseenter', () => {
-      // Get positions
-      const movingRect = movingDiv.getBoundingClientRect();
-      const stopRect = stopDiv.getBoundingClientRect();
+    const update = () => {
+      rect.style.left = position + 'px';
+      position += 5;
 
-      const isTouching = !(movingRect.right < stopRect.left);
-
-      // Move only if not touching
-      if (!isTouching) {
-        distance += 50;
-        movingDiv.style.left = distance + 'px';
+      if(position > window.innerWidth){
+        position = -rect.offsetWidth;
       }
-    });
+    };
+    
+    const moveRight = () => {
+      update();
+      requestAnimationFrame(moveRight);
+    }
+
+    requestAnimationFrame(moveRight);
   </script>
 
 </body>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>selectMultiple</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        list-style: none;
+    }
+
+    li {
+        list-style: none;
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    
+    <script>
+        const listItems = document.querySelectorAll('li');
+        console.log(listItems);
+        for (let i = 0; i < listItems.length; i++){
+        listItems[i].addEventListener('mouseenter', () => {
+            listItems[i].style.visibility = "hidden";
+        });
+        }
+
+    </script>
+</body>
+</html>
